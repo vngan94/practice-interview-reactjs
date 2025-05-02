@@ -1,0 +1,421 @@
+<html>
+  <head>
+    <style>
+      .Portal {
+        border-color: lightblue;
+        border-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      reactjs
+    </h1>
+    <br/>
+    <ul>
+        <li>What is virtual DOM?  How does it work?
+            <ul>
+                <li><b>Purpose</b>: make UI updates faster and more efficient.</li>
+                <li><b>is lightweight copy</b> of the real DOM</li>
+                <li><b>How does it work?</b> 
+                    <ul>
+                        <li>UI is first built using the <b>virtual DOM</b>.</li>
+                        <li>When data changes, a <b>new virtual DOM</b> is created.</li>
+                        <li>React compares it to the <b>old virtual DOM</b> (diffing).</li>
+                        <li>It finds the <b>smallest changes</b> needed.</li>
+                        <li>Only those updates are applied to the <b>real DOM</b> (reconciliation).</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>JSX 
+            <ul>
+                <li><b>Purpose</b>: allow write HTML inside JavaScript file.  </li>
+                <li><b>Is  JSX a part of React?</b>
+                    <ul>
+                        <li>No, they&#39;re often used together</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Why can&#39;t we write <b>class </b>inside our JSX markup?
+            <ul>
+                <li><b>In Javascript, class </b>is a keyword used to define a class </li>
+                <li>Use <b>className </b>to avoid conflict, <b>className </b> in JavaScript = class in HTML</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How to create functional component ?
+            <ul>
+                <li>Use function in Javascript return a JSX.</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>props?
+            <ul>
+                <li>is a way to pass data from one component to another</li>
+                <li>read-only  </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>props and state?
+            <ul>
+                <li>Props: 
+                    <ul>
+                        <li>purpose: Sending data from parent to child component</li>
+                        <li>parent control props ⇒ props chỉ read-only trong child component</li>
+                    </ul>
+                </li>
+                <li>State:
+                    <ul>
+                        <li>purpose: handle sự thay đổi của data </li>
+                        <li>Component controls it itself ⇒ can change, using setState</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How to render aa list in React?
+            <ul>
+                <li>Use map()</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Why do use key?
+            <ul>
+                <li>to track element to know which one is updated, changed, or removed to rerender that element, instead the whole list</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Why is it bad to use index for key?
+            <ul>
+                <li>when remove 1 element, and add 1 element, index is the same but element is not -&gt; it makes React track wrong element need to update</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Why use React.Fragment (<q>&lt;&gt;&lt;/&gt;</q>)?
+            <ul>
+                <li>for group elements without extra HTML elememt</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is conditional rendering in React?</li>
+        <li>it is about if else to handle logic to render elements   </li>
+        <li></li>
+        <li>How to apply style in React?
+            <ul>
+                <li>inline style</li>
+                <li>external style</li>
+                <li>Component Libraries (Material-UI, React-Bootstrap)</li>
+                <li>style component - write Css inside Javascript file</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How to conditional logic for className?
+            <ul>
+                <li>clsx (utility library)</li>
+                <li>viết if, else, tenary operators</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How parent and child component can communicate in react, can they mutate props?
+            <ul>
+                <li>parent pass data for child using props</li>
+                <li>parent can change props, props is read-only for child</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is useState() hook?
+            <ul>
+                <li>add <b>state</b> to functional components  </li>
+                <li>How does it work? Cho phép
+                    <ul>
+                        <li><b>Declaring </b><b>S</b><b>tate:</b> như declare 1 variable  </li>
+                        <li><b>Setting State</b>:  để update value của state
+                            <ul>
+                                <li>When the state changes, React re-renders the component.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is useEffect hook?
+            <ul>
+                <li>Purpose: doing side effects
+                    <ul>
+                        <li>Những side effects: work vs Dom, fetch data from API</li>
+                    </ul>
+                </li>
+                <li>Được trigger sau khi component được render 
+                    <ul>
+                        <li>Cách ngăn chặn useEffect bị trigger mỗi khi component re-render? 
+                            <ul>
+                                <li>Define dependency</li>
+                            </ul>
+                        </li>
+                        <li>[] empty dependency - useEffect() is triggered <b>only once</b> when component renders</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is useReducer hook?
+            <ul>
+                <li>dùng để handle complex logic to update state</li>
+                <li>instead of call setState to update value multiple times, we just define reducer function and dispatch action  </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is react context, useContext hook?
+            <ul>
+                <li>React context <b>purpose</b>: Define something global - available everywhere - thay vì phải pass props qua nhiều child component để tới được component đích
+                    <ul>
+                        <li>cách tạo 1 context: 
+                            <ul>
+                                <li>tạo 1 provider</li>
+                                <li>wrap the whole application with provider</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>useContext() purpose: đọc value được share trong context </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is useRef() hook?
+            <ul>
+                <li>purpose: access element in real dom, store value đó và <b>dont make component re-render khi value đó thay đổi</b> </li>
+                <li>cách lấy value: object.current</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is useMemo hook? 
+            <ul>
+                <li>What do you know about useMemo hook?  </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>onChange()?
+            <ul>
+                <li>purpose: capture <b>changes to an input field</b>  </li>
+                <li>event: object chứa thông tin thay đổi</li>
+                <li>là event handler</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>useMemo() ?
+            <ul>
+                <li>purpose: Memoize the value of a calculation, <b>prevent unnecessary recalculations.  </b></li>
+                <li>only recalculate when one of the <b>dependencies</b> changes.  </li>
+                <li>[] empty dependency - useMemo() is triggered <b>only once</b> when component renders</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>useCallback() ?
+            <ul>
+                <li>purpose: memoize the function, prevent creating a new function unecessarily.</li>
+                <li>only create new function when on of the dependencies changes.</li>
+                <li>[]empty dependency - useCallback() is triggered <b>only once</b> when component renders</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>React.memo()? How to add a comparator to it?
+            <ul>
+                <li>purpose: memoize the component, prevent unnecessary re-render when parent renders</li>
+                <li>only re-render when props or state change</li>
+                <li>add comparator: control exactly when should re-render 
+                    <ul>
+                        <li>condition true ⇒ memoize ⇒ prevent re-render</li>
+                        <li>condition false ⇒ k memoize ⇒ render</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>custom hook?
+            <ul>
+                <li>purpose: define 1 function handle logic, sử dụng React hook: useState(), useEffect() ⇒ resuse</li>
+                <li>follow name convention - start with use, camelCase</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>file structuring in reactjs and best practices?
+            <ul>
+                <li>type - for small and medium application</li>
+                <li>feature - more scalable - for big application</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>routing, react router? Cách dùng?
+            <ul>
+                <li>routing: change view based on the URL</li>
+                <li>React Router: 
+                    <ul>
+                        <li>support React do routing (React k tự routing được) và k reload lại full page, chỉ re-render lại component cần update</li>
+                        <li>Key features: 
+                            <ul>
+                                <li><b>Links</b> — to navigate between routes.  </li>
+                                <li><b>Routes system</b> — to match URL to Component. </li>
+                                <li><b>History API</b> (browser feature) — to change URL without refresh.  </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>{children} <mark style="background-color: transparent; color: gray;"><q>export default function AppProvider ({children}) {} </q></mark>- props children purpse? 
+How to pass props
+            <ul>
+                <li>purpose: render child component </li>
+                <li>return (
+        &lt;FruitsContext.Provider value={fruits}&gt;
+            &lt;UserContext.Provider value={user}&gt;
+                <mark style="background-color: transparent; color: orange;"><b>{children}</b></mark>
+            &lt;/UserContext.Provider&gt;
+        &lt;/FruitsContext.Provider&gt;
+    )</li>
+                <li>Cách pass props: 2 cách
+                    <ul>
+                        <li>&lt;AppProvider&gt;
+   <mark style="background-color: transparent; color: red;"> &lt;App /&gt;</mark>
+&lt;/AppProvider&gt;</li>
+                        <li>&lt;AppProvider <mark style="background-color: transparent; color: red;">children={&lt;App /&gt;}</mark> /&gt;</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>React.createPortal()?
+            <ul>
+                <li>purpse: render a component outside &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;, where the entire app renders</li>
+                <li>apply for: modal, tooltips, dropdown (somthing floats over the rest of the app)</li>
+                <li>note: vẫn call nó trong App.js</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>React lazy và suspense?
+            <ul>
+                <li>React lazy: loading components <b>only when needed</b>  
+                    <ul>
+                        <li>apply: cho những big component, or rarely-used</li>
+                    </ul>
+                </li>
+                <li>React suspense: Show fallback UI while the lazy component is loading   </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How to use Typescript together with React?
+            <ul>
+                <li>install typescript - make sure có file tsx config</li>
+                <li>rename extension: jsx ⇒ tsx</li>
+                <li>typing props</li>
+                <li>type hooks</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>high order component?
+            <ul>
+                <li>old topic, nowadays, we dont need high order component, if we need something custom, we use custom hook</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Strict mode
+            <ul>
+                <li>purpose: find potential issues,</li>
+                <li>how does it work: render component twice, it compares the result of rendering the first time and the second time</li>
+                <li>scope: dev, not production</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Do you want to rewrite all our classes components with hooks? Will it make our application faster?
+            <ul>
+                <li>Not necessarily, make sure you understand the business deeply  </li>
+                <li>hooks doesn&#39;t make your application faster, it&#39;s just cleaner</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>Can you force a component to re-render without calling setState?
+            <ul>
+                <li>Yes but not recommend</li>
+                <li>Use useState hoặc useReducer</li>
+            </ul>
+        </li>
+        <li>React Fiber?
+            <ul>
+                <li><b>React Fiber is about rendering - render engine.</b> </li>
+                <li>Previously, React rendered the <b>entire component at once</b>. With Fiber, rendering is broken into <b>small chunks</b>, allowing React to <b>pause</b>, <b>interrupt</b>, or <b>resume</b> work. This lets it prioritize more important or faster components, improving responsiveness and user experience.</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is server side rendering in React?
+            <ul>
+                <li>purpose:</li>
+                <li>how does it work:</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>What is the difference between server rendering, client rendering,  and server side rendering?
+            <ul>
+                <li>server rendering: HTML được render ở back end và sent to client, 
+                    <ul>
+                        <li>check: view source: full html with css, js</li>
+                    </ul>
+                </li>
+                <li>client rendering: HTML được render ở browser by using Javascript
+                    <ul>
+                        <li>check: empty html</li>
+                    </ul>
+                </li>
+                <li>pros and cos of server side rendering:
+                    <ul>
+                        <li>fast</li>
+                        <li>sale: search engine optimization - your website is more searchable, visiable</li>
+                        <li>see website from the start - dont want to wait for Javascript load </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>React Query?
+            <ul>
+                <li>purpose: như useEffect() - dùng để fetch data nhưng more powerful: nhiều tính năng built-in hơn: caching, support SSR,...</li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How Redux work in plain Javascript?
+            <ul>
+                <li>Redux have 3 building block:
+                    <ul>
+                        <li>Store: chứa các state</li>
+                        <li>reducer: a function to update state</li>
+                        <li>action: an object describe what happens, include payload và type</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li></li>
+        <li>How Redux work with React?
+            <ul>
+                <li>instal react/redux, redux</li>
+                <li>wrap App component with Provider</li>
+                <li>define store, reducer, action
+                    <ul>
+                        <li>chỉ 1 store, 1 reducer</li>
+                        <li>nhiều reducer thì combineReducers</li>
+                    </ul>
+                </li>
+                <li>useSelect để get state</li>
+                <li>dispatch để dispatch action - trigger update state</li>
+                <li></li>
+            </ul>
+        </li>
+        <li></li>
+
+    </ul>
+    </body>
+</html>
