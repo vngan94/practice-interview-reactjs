@@ -1,0 +1,110 @@
+- Core Typescript:
+- How to set up TypeScript? (x) >>>
+    - Dùng vite để set up basic project (plain JS hoặc vs React)
+- Javascript and TypeScript? >>>
+    - TypeScript is Javascript syntax for types
+    - TypeScript được translate to JS để run trên browser 
+- Does Typescript improve our code (x) >>>
+    - Yes
+- How to define type? >>>
+    - 
+- Explicit vs implicit types ?
+    - Explicit type: provide type 
+    - implicit types: để typescript tự đoán
+    - ⇒ recommend: Explicit type
+- interface >>>
+    - purpose: define, type 1 object
+    - khi pass ..
+- what is a type in typescript? >>>
+    - purpose: dùng để define custom type ⇒ readable and resuable
+- What is the difference between type and interface? >>>
+    - same: used to define object, can be extended
+    - difference:
+        - Use interface: for Implement OOP
+        - **Use **`**type**` for unions, intersections, and complex type expressions.  
+- What is union in typeScript? >>>
+    - it's like OR operator ⇒ union together with different type
+    - use it for parameter in a function
+- What do you know type narrowing in TypeScript? >>>
+    - purpose: help typescript figure out specific type by using condition 
+- What is void in Typescript? Q1: What is void in Typescript? >>>
+    - it means function returns nothing
+- What is never in Typescript? >>>
+    - it means function never comes to the end, the function throw an Error
+- what is generic in typescript? >>>
+    - purpose: deal with different types, it means you can pass any types
+- What is the difference between tupple and array in Typescript? >>>
+    - the number of elements:
+        - array: dynamic
+        - tuple: fixed, each element has specific type
+- Q1: How to use optional properties in object? >>>
+    - use question mark ? after the property, it means that the property is not optional
+- Q2: How to use an elvis operator? >>>
+    - aka optional chaining operator, 
+    - purpose: avoid throw error when direct access sth null or undefined
+- Q3: How to use double question mark ?? >>>
+    - give the default value when direct access sth null or undefined
+- How to type keys in object? >>>
+    - Dùng key of
+- What is index signature in Typescript? >>>
+    - purpose: khi dynamic property name
+- How to use Record helper in Typescript? >>>
+    - thay cho index signature ⇒ more readable
+    - purpose: define** s**pecific type for key and value of object   
+- How to use Omit and Pick in Typescript? >>>
+    - create new type từ interface hoặc type existing 
+    - Omit: bỏ property
+    - Pick: pick property
+- How to use Readonly helper in Typescript? >>>
+    - let property read only, dont want to change property of the object
+- How to build a custom Readonly like Readonly helper in Typescript? >>>
+    - .
+        ```
+        type ReadOnlyV2<T> = {
+    readonly [P in keyof T]: T[P]
+}
+        ```
+- How to use Partial helper in Typescript? >>>
+    - Make all properties optional 
+    - When you wrap an interface with `Partial`, **you no longer need to define all the properties** of that interface  
+- What is required in Typescript? >>>
+    - it is the opposite of Partial - make all propeties require
+- How to use Typescript together with React?
+    - set up vs vite, chon tempate: React
+    - type props, state
+    - extenstion file: tsx
+- Type reference >>>
+    - chính là implicit type, typescript guess data type when we dont provide it
+- literal type: >>>
+    - **prupose: restrict a variable** to a specific value  
+- What is tsconfig.json file? >>>
+    - file config, cho biết Typescript sẽ check code ntn , compile code ntn
+        - target - which Javascript version that code will be transformed from Typescript to Javascript
+        - strict: true - enable typscript check type-
+- What does Typescript as a language consists of? >>>
+    - language - typescript: syntax, keyword, type annotation
+    - compiler - Typescript Compiler: convert Typescript to Javascript
+    - language service: statement completion, code format, color,..
+- How to transpile file to Javascript? >>>
+    - Dùng typescript compiler -tsc
+- What is .d.ts in Typescript? >>>
+    - DÙng để declare về type definition  
+- what is map file Typescript? >>>
+    - map compiled js to ts, support debugger
+    - When TypeScript compiles a `.ts` file to `.js`, a lot of helpful information like type annotations, interfaces, and original line numbers are lost.   
+- 
+- Advanced Typescript:
+- What is function overloading in Typescript? >>>
+    - to deal with different types or numbers of parameters and return type
+    - prefer arrow function with union hơn
+- what is extends? >>>
+    - it's like if condition for typing
+    - vs typeof:
+        - typeOf: get the type of value, then compare
+        - extends: compare type
+- what is infer? >>>
+    - allow to custom return a type when it match a condition
+    - ![](https://remnote-user-data.s3.amazonaws.com/doCa6ldBZ6jS2tORYrHddPTSs1ESlWmdfNoDXCNLd9idj9ubCiFs7Ez9-jO2e48VuTk37xd5aQjvuvezz_3PndHflp4mdupSR2824A5gspHVkxtHYRSW9i2ZOkdpgZgw.png)
+    - vd: 
+        - “If I have a `Box<Something>`, give me `Something`.”  
+        - ![](https://remnote-user-data.s3.amazonaws.com/oO9aoREKYJLRkmnxH2J4IMSC-BAFHZQ3lapwnhUmE3uP--7XY1g-uj09MR6hyfQ7RpDu3KaBmL1d0zH4bP8eSbZZ0FTjcJfAYXyMtCF-xDYmQvi4gdftHA82OeNsCXY3.png)
