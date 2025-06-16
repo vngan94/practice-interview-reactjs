@@ -1,11 +1,12 @@
 import React from "react";
 import Counter from "./Counter";
-import Calculator from "./Calculator";
+import Greeting from "./Greeting";
 export default function App() {
   return (
     <>
-        <Counter/>
-        <Calculator/>
+        {/* <Counter/> */}
+        {/* <Calculator/> */}
+        <Greeting user='Ngan'/>
     </>
 
   )
